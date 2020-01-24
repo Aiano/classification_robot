@@ -1,9 +1,10 @@
 #include <opencv2/opencv.hpp>
 #include "preprocess.h"
+#include "knn.h"
 
 #define CAMERA_ID 0
 int main(){
-        cv::VideoCapture cap(0);
+        cv::VideoCapture cap(CAMERA_ID);
         if(!cap.isOpened()){
                 std::cerr<<"Can't open camera."<<std::endl;
                 return -1;
