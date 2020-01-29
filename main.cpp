@@ -2,7 +2,7 @@
 #include "preprocess.h"
 #include "knn.h"
 
-#define CAMERA_ID 0
+#define CAMERA_ID 2
 //#define ADD_SAMPLE_MODE
 #define KNN_DIMENSION 2
 

@@ -62,7 +62,7 @@ bool drawDivision(const cv::Mat &input, cv::Mat &drawnOutput, std::vector<std::v
         std::vector<cv::Vec4i> hierarchy;
         int object_number = 0;
 
-        cv::findContours(img, contours, hierarchy, cv::RETR_CCOMP, cv::CHAIN_APPROX_SIMPLE);
+        cv::findContours(img, contours, hierarchy, cv::RETR_EXTERNAL, cv::CHAIN_APPROX_SIMPLE);
 
         if (contours.size() < 1) {
                 std::cout << "Find nothing." << std::endl;
