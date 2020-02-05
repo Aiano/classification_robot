@@ -38,7 +38,8 @@ bool process(const cv::Mat &input, const cv::Mat &background, cv::Mat &output) {
 
 bool drawDivision(const cv::Mat &input, cv::Mat &drawnOutput, std::vector<std::vector<float>> &samples,
                   std::vector<std::vector<int>> &positions, const int sample_dimension) {
-        int area_lower_limit = 50;
+        const int area_lower_limit = AREA_LOWER_LIMIT;
+        const float area_scaling_down_divisor = AREA_SCALING_DOWN_DIVISOR;
         samples.clear();
         positions.clear();
 
@@ -82,7 +83,7 @@ bool drawDivision(const cv::Mat &input, cv::Mat &drawnOutput, std::vector<std::v
                         float width = r.size.width;
                         float height = r.size.height;
                         float ar = (width < height) ? height / width : width / height;
-                        sample.push_back(area);
+                        sample.push_back(area / area_scaling_down_divisor);
                         sample.push_back(ar);
                         position.push_back(r.center.x);
                         position.push_back(r.center.y);

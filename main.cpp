@@ -1,8 +1,8 @@
 #include <opencv2/opencv.hpp>
-#include "preprocess.h"
-#include "knn.h"
+#include "preprocess/preprocess.h"
+#include "knn/knn.h"
 
-#define CAMERA_ID 2
+#define CAMERA_ID 0
 //#define ADD_SAMPLE_MODE
 #define KNN_DIMENSION 2
 
@@ -40,9 +40,9 @@ int main() {
                         cv::waitKey(0);
                         cv::destroyWindow("Result");
                         drawDivision(result, result, samples, positions, 2);
-#ifndef ADD_SAMPLE_MODE
+#ifndef ADD_SAMPLE_MODE//predict
                         for (int i = 0; i < samples.size(); i++) {
-                                std::cout << "Object " << i+1 << " with label: " << KNN.predict(samples[i])
+                                std::cout << "Object " << i + 1 << " with label: " << KNN.predict(samples[i])
                                           << " and position: [x:" << positions[i][0] << ",y:" << positions[i][1] << "]"
                                           << std::endl;
                         }

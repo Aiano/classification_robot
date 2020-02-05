@@ -1,4 +1,4 @@
-#include "knn.h"
+#include "knn/knn.h"
 #include <iostream>
 
 using namespace std;

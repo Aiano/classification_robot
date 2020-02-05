@@ -1,0 +1,1 @@
+add_library(Knn knn.cpp knn.h)

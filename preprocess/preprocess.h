@@ -6,6 +6,9 @@
 #include <cstdlib>
 #include <string>
 
+#define AREA_LOWER_LIMIT 50
+#define AREA_SCALING_DOWN_DIVISOR 1
+
 bool process(const cv::Mat &input, const cv::Mat &background, cv::Mat &output);
 
 bool drawDivision(const cv::Mat &input, cv::Mat &drawnOutput, std::vector<std::vector<float>> &samples,
